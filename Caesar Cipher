@@ -1,0 +1,30 @@
+def caesar_cipher(string, shift)
+  array_letters = string.bytes
+  array_letters.map! do |num| 
+   if num.between?(65, 90)
+    if num+shift<=90
+      num += shift
+    else
+      until num+shift<=90
+        shift -= 26
+      end
+      num += shift
+    end
+   elsif num.between?(97, 122)
+      if num+shift<=122
+      num += shift
+      else
+      until num+shift<=122
+        shift -= 26
+      end
+      num += shift
+    end
+   else 
+    num=32
+   end
+  end
+  array_letters.map!{|letter| letter.chr}
+  array_letters.join
+end
+
+p caesar_cipher("hello this is a test", 3)
