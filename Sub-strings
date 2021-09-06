@@ -1,0 +1,12 @@
+dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit","on","my","face"]
+
+def substrings(word, dictionary)
+    substrings_count = Hash.new(0)
+    dictionary.each do |quote|
+        substring = word.match(quote)
+        substrings_count[quote] += 1 if substring
+    end
+    p substrings_count
+end
+
+substrings("below is a cat", dictionary)
