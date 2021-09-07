@@ -1,0 +1,24 @@
+def test_if_finish(perhaps)
+  answer = 0
+  for i in 0..perhaps.length-2
+    answer +=1 if perhaps[i]>perhaps[i+1]
+  end
+  if answer == 0
+    return true
+  else 
+    return false
+  end 
+end
+
+def bubble_sort(array)
+  until test_if_finish(array)==true
+    for i in 0..array.length-2
+      if array[i]>array[i+1]
+        array[i], array[i+1]=array[i+1], array[i]
+      end
+    end
+  end
+  return array
+end
+
+return bubble_sort([4,3,78,2,0,2])
