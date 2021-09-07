@@ -1,0 +1,23 @@
+def stock_picker(array)
+    lowest = array[0]
+    index_lowest=0
+    highest= array[1]
+    index_highest=1
+  result=[]
+  array.each_with_index do |price, index|
+    if highest-lowest < price-lowest && index_lowest<index
+      highest = price
+      index_highest= index
+    elsif highest-lowest < highest-price && index_highest>=index
+      lowest = price
+      index_lowest= index
+    end
+    result= [lowest, highest]
+    p result
+  end
+end
+
+
+
+
+stock_picker([17,3,6,9,15,8,6,1,9])
